@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Skeleton } from "@/components/ui/skeleton";
 import React, { useState } from "react";
 
 export default function TransactionPage() {
@@ -66,9 +67,7 @@ export default function TransactionPage() {
       <Card className="w-full max-w-md p-4">
         <CardHeader>
           <CardTitle>Expense</CardTitle>
-          <CardDescription>
-            Ask the AI to document your expense.
-          </CardDescription>
+          <CardDescription>Ask the AI to document your .</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="w-full">
@@ -110,8 +109,8 @@ export default function TransactionPage() {
             {loading ? (
               // Show skeleton loader while loading
               <div className="space-y-2">
-                <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
-                <div className="h-20 bg-gray-200 rounded animate-pulse"></div>
+                <Skeleton className="h-4" />
+                <Skeleton className="h-20" />
               </div>
             ) : (
               responseData && (
