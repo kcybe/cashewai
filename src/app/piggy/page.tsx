@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function TransactionPage() {
   const [text, setText] = React.useState("");
@@ -35,7 +36,7 @@ export default function TransactionPage() {
     if (file) formData.append("file", file);
 
     try {
-      const res = await fetch("/api/expense-document", {
+      const res = await fetch("/api/ask-ai", {
         method: "POST",
         body: formData,
       });
@@ -63,11 +64,22 @@ export default function TransactionPage() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center mt-8">
-      <Card className="w-full max-w-md p-4">
-        <CardHeader>
-          <CardTitle>Expense</CardTitle>
-          <CardDescription>Ask the AI to document your .</CardDescription>
+    <div className="flex flex-col items-center mt-8 min-h-screen">
+      <Card className="w-full max-w-md">
+        <CardHeader className="flex flex-row items-center justify-between">
+          <div>
+            <CardTitle>Piggy AI</CardTitle>
+            <CardDescription className="mt-2">
+              Ask Piggy to document your expense / income.
+            </CardDescription>
+          </div>
+          <Image
+            src="/piggy.png"
+            alt="Piggy"
+            width={60}
+            height={60}
+            className="rounded-full"
+          />
         </CardHeader>
         <CardContent>
           <div className="w-full">
@@ -101,7 +113,7 @@ export default function TransactionPage() {
         </CardContent>
       </Card>
       {(loading || responseData) && (
-        <Card className="w-full max-w-md p-4 mt-4">
+        <Card className="w-full max-w-md mt-4">
           <CardHeader>
             <CardTitle>Results</CardTitle>
           </CardHeader>
@@ -118,7 +130,7 @@ export default function TransactionPage() {
                 <div className="space-y-2">
                   {responseData && (
                     <>
-                      <div className="mt-2 p-3 rounded-md">
+                      <div className="rounded-md">
                         {/* Access and format your specific fields here */}
                         <p>
                           Summary:&nbsp;
