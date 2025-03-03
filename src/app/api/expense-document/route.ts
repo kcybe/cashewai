@@ -98,9 +98,11 @@ Description: Create multiple transactions at once using JSON.
 5. Input:
 User Input: ${text}
 
-Generated Output Format:
-- Generated Link: [Cashew transaction link]
-- Summary: [Short description of what was processed]`,
+Generated JSON Output Format:
+{
+"generated_link": [Cashew transaction link],
+"summary": [Short description of what was processed]
+}`,
                 },
                 ...(base64Image
                   ? [
