@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
 async function fileToBase64(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result as string);
-    reader.onerror = (error) => reject(error);
-  });
+  // Get the ArrayBuffer from the file
+  const bytes = await file.arrayBuffer();
+  // Convert to Buffer for Node.js
+  const buffer = Buffer.from(bytes);
+  // Convert to base64
+  const base64String = buffer.toString("base64");
+  // Add proper data URI prefix based on file type
+  const contentType = file.type || "application/octet-stream";
+  return `data:${contentType};base64,${base64String}`;
 }
 
 function getCurrentDate() {
