@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,16 +33,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <div className="flex flex-col min-h-screen">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+            <Footer />
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );
