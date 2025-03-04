@@ -10,8 +10,9 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Image from "next/image";
+import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
+import PiggyLogo from "./PiggyLogo";
 
 interface PiggyInputFormProps {
   onSubmit: (text: string, file: File | null) => Promise<void>;
@@ -37,20 +38,14 @@ export function PiggyInputForm({ onSubmit, loading }: PiggyInputFormProps) {
             Ask Piggy to document your expense / income.
           </CardDescription>
         </div>
-        <Image
-          src="/piggy.png"
-          alt="Piggy"
-          width={60}
-          height={60}
-          className="rounded-full"
-        />
+        <PiggyLogo />
       </CardHeader>
       <CardContent>
         <div className="w-full">
-          <Input
-            className="w-full max-w-md"
+          <Textarea
+            className="w-full"
             placeholder="Today I bought..."
-            type="text"
+            typeof="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />

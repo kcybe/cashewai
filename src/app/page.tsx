@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PageTransition } from "@/components/page-transition";
+import LearnMoreDialog from "@/components/home/LearnMoreDialog";
 
 export default function Home() {
   return (
@@ -20,9 +21,7 @@ export default function Home() {
             <Button size="lg" asChild>
               <Link href="/piggy">Get Started</Link>
             </Button>
-            <Button size="lg" variant="outline">
-              Learn More
-            </Button>
+            <LearnMoreDialog />
           </div>
         </section>
       </PageTransition>
