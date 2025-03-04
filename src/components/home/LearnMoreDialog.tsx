@@ -23,38 +23,40 @@ export default function LearnMoreDialog() {
             Learn More
           </Button>
         </DialogTrigger>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-2xl">About Cashew AI</DialogTitle>
+            <DialogTitle className="text-2xl">About Piggy AI</DialogTitle>
             <DialogDescription className="text-lg pt-4">
-              Simplify your financial management with Cashew AI
+              Simplify your money management with Piggy AI
             </DialogDescription>
           </DialogHeader>
 
           <div className="space-y-4 py-4">
             <h3 className="text-xl font-medium">How it works</h3>
             <p>
-              Our AI-powered assistant makes it easy to track and manage your
-              expenses and income. Simply upload your receipts or describe your
-              transactions, and our AI will automatically categorize and provide
-              you a transaction link for Cashew app.
+              Our AI assistant makes it simple for you to track and manage your
+              income and expenses. Simply upload your receipts or provide a
+              natural language description of your transactions, and our AI will
+              automatically categorize them and provide you with a transaction
+              link for Cashew app.
             </p>
 
             <h3 className="text-xl font-medium">Features</h3>
             <ul className="list-disc pl-6 space-y-2">
               <li>Automatic receipt scanning and processing</li>
-              <li>Natural language descriptions of transactions</li>
-              <li>AI-powered categorization of expenses</li>
+              <li>Natural language transaction descriptions</li>
+              <li>AI-based categorization of expenses</li>
               <li>
-                Simple integration with Cashew App by using built in app links
+                Simple integration with Cashew App through utilization of built
+                in app links
               </li>
-              <li>Track your spending patterns effortlessly</li>
+              <li>Track your spending habits in a snap</li>
             </ul>
 
             <h3 className="text-xl font-medium">Get Started</h3>
             <p>
-              Click the &quot;Get Started&quot; button to begin using Piggy AI
-              for your financial management needs. No complex setup required!
+              Click on &quot;Get Started&quot; to begin taking advantage of
+              Piggy AI in managing your finances. It&apos;s that simple!
             </p>
 
             <div className="pt-4 justify-center flex">

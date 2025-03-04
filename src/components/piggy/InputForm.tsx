@@ -33,7 +33,7 @@ export function PiggyInputForm({ onSubmit, loading }: PiggyInputFormProps) {
     <Card className="w-full max-w-md">
       <CardHeader className="flex flex-row items-center justify-between">
         <div>
-          <CardTitle>Piggy AI</CardTitle>
+          <CardTitle>Hey! 👋</CardTitle>
           <CardDescription className="mt-2">
             Ask Piggy to document your expense / income.
           </CardDescription>
