@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PiggyAI",
+  title: "CashewAI",
   description:
-    "PiggyAI is a web application for helping you manage your finances in Cashew app.",
+    "CashewAI is a web application for helping you manage your finances in Cashew app.",
 };
 
 export default function RootLayout({

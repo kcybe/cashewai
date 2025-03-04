@@ -25,9 +25,9 @@ export default function LearnMoreDialog() {
         </DialogTrigger>
         <DialogContent className="max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-2xl">About Piggy AI</DialogTitle>
+            <DialogTitle className="text-2xl">About CashewAI</DialogTitle>
             <DialogDescription className="text-lg pt-4">
-              Simplify your money management with Piggy AI
+              Simplify your money management with CashewAI
             </DialogDescription>
           </DialogHeader>
 
@@ -56,12 +56,12 @@ export default function LearnMoreDialog() {
             <h3 className="text-xl font-medium">Get Started</h3>
             <p>
               Click on &quot;Get Started&quot; to begin taking advantage of
-              Piggy AI in managing your finances. It&apos;s that simple!
+              CashewAI in managing your finances. It&apos;s that simple!
             </p>
 
             <div className="pt-4 justify-center flex">
               <Button onClick={() => setIsOpen(false)} asChild>
-                <Link href="/piggy">Try Piggy AI Now</Link>
+                <Link href="/piggy">Try CashewAI Now</Link>
               </Button>
             </div>
           </div>
